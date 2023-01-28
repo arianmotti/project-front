@@ -1,0 +1,62 @@
+<div *ngIf="state=='init'" [@inOutAnimation] class="container login">
+  <h1 class="login-header">سلام!</h1>
+  <h1 class="login-header">به سامانه‌ی سرا خوش اومدی</h1>
+  <form [formGroup]="authForm" class="login-box" (ngSubmit)="enterUsername()">
+	<p [ngClass]="{ 'has-error': isSubmitted && formControls.username.errors }">
+		<input list="unames" type="text" placeholder="به چه اسمی صدات کنم؟" formControlName="username" (keyup)="onKeyUp()" />
+		<datalist id="unames">
+			<option *ngFor = "let i of dataListOptions" [value]="i">{{i}}</option>
+		</datalist>
+    </p>
+	<div *ngIf="isSubmitted && formControls.username.errors" class="help-block">
+      <div *ngIf="formControls.username.errors.required">نام کاربری وارد نشده است</div>
+    </div>
+  <input type="submit" name="action" value="بزن بریم" />
+  </form>
+</div>
+<div *ngIf="state=='choice'" [@inOutAnimation] class="container login">
+	<h1 class="login-header">قبلاً وارد سامانه شدی؟</h1>
+	<button class="under-btn" (click)='goLogin()'>آره حساب کاربری دارم</button>
+	<button class="under-btn" (click)='goRegister()'>نه اولین بارمه</button>
+</div>
+<div *ngIf="state=='login' || state=='register'" [@inOutAnimation] class="container login">
+  <h1 *ngIf="state=='login'" class="login-header">ورود به سامانه</h1>
+  <h1 *ngIf="state=='register'" class="login-header">ثبت نام در سامانه</h1>
+  <form [formGroup]="authForm" class="login-box" (ngSubmit)="signIn($event)">
+	<p [ngClass]="{ 'has-error': isSubmitted && formControls.username.errors }">
+		<input type="text" placeholder="نام کاربری" formControlName="username" />
+    </p>
+	<div *ngIf="isSubmitted && formControls.username.errors" class="help-block">
+      <div *ngIf="formControls.username.errors.required">نام کاربری وارد نشده است</div>
+    </div>
+	<p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+		<input id="question" type="text" placeholder="برای ورود دفعه ی بعد چه سؤالی ازت بپرسم؟" formControlName="question" />
+		<input type="password" placeholder="جواب سؤال بالایی" formControlName="password" />
+    </p>
+	<div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+      <div *ngIf="formControls.password.errors.required">رمز عبور وارد نشده است</div>
+    </div>
+	<div *ngIf="login.error" class="help-block">
+      <div>{{login.error}}</div>
+	  <p *ngIf="login.suggestions">نام کاربری پیشنهادی:</p>
+		<ul *ngFor="let s of login.suggestions">
+			<li>{{s}}</li>
+		</ul>
+    </div>
+  <input *ngIf="state=='login'" class="login-header" type="submit" name="action" value="برو که رفتیم" />
+  <input *ngIf="state=='register'" class="login-header" type="submit" name="action" value="ثبت نام" />
+  </form>
+</div>
+<div *ngIf="state=='postLogin'" [@inOutAnimation] class="container login">
+	<h1 class="login-header">سلام {{authService.username}}</h1>
+	<h2 *ngIf="authService.last_login" class="small login-header">خوشحالم که دوباره می بینمت</h2>
+	<h2 *ngIf="authService.last_login" class="small login-header">قبلاً در {{authService.last_login}} مراجعه کرده بودی.</h2>
+	<h2 *ngIf="authService.last_visit" class="small login-header">مشکلت در مورد {{authService.last_visit}} حل شد؟</h2>
+	<h2 *ngIf="!authService.last_login" class="small login-header">خوشحالم که می بینمت</h2>
+	<h2 *ngIf="!authService.last_visit" class="small login-header">حالت چطوره؟</h2>
+	<input (keydown.enter)='goAdmin()' type="text" placeholder="خلاصه احوالات..." />
+	<button id="arrow" class="under-btn" (click)='goAdmin()'><svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" fill="white"></path> </svg></button>
+</div>
+<footer>
+	  <p>اگر می‌خواهی خوشحال باشی، پس باش. -  لئو تولستوی</p>
+</footer> 
