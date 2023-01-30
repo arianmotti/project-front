@@ -14,6 +14,7 @@ import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //my code
 import { MBTIComponent } from './mbti/mbti.component';
+import { DISCComponent } from './disc/disc.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MBTIComponent } from './mbti/mbti.component';
     UnityComponent,
     GameComponent,
     //my code
-    MBTIComponent
+    MBTIComponent,
+    DISCComponent
   ],
   imports: [
 	BrowserAnimationsModule,

@@ -122,6 +122,11 @@
     </div>
     <button class="check-button" (click)="calculate_mbti()">ثبت پاسخ ها </button>
     <p *ngIf="result">نتیجه ی تست : {{result}}</p>
+    <p *ngIf="allnotanswered" style="	color: red;
+	direction: rtl;
+	text-align: center;
+	margin-bottom: 10px;
+	background: whitesmoke;">به همه ی سوالات پاسخ داده نشده است</p>
 
 </form>
 <footer>

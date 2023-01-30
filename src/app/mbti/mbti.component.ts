@@ -10,6 +10,7 @@ import { count } from 'rxjs';
 export class MBTIComponent implements OnInit {
   answers=Array(20).fill(null)
   result = ""
+  allnotanswered = false
 
   constructor() { }
 
@@ -17,7 +18,7 @@ export class MBTIComponent implements OnInit {
   }
   calculate_mbti(){
     if(this.answers.includes(null)){
-      alert("هنوز به تمامی سوالات پاسخ نداده اید")
+      this.allnotanswered=true
     } else{
   
     var E=0

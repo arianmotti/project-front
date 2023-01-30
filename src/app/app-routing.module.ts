@@ -7,7 +7,9 @@ import { ForumComponent } from './forum/forum.component';
 import { AdminComponent } from './admin/admin.component';
 import { GameComponent } from './game/game.component';
 import { AuthGuard } from './auth.guard';
+//my code
 import { MBTIComponent } from './mbti/mbti.component';
+import { DISCComponent } from './disc/disc.component';
 
 const routes: Routes = [
 	{ path: '', pathMatch: 'full', redirectTo: 'login'},
@@ -18,7 +20,8 @@ const routes: Routes = [
 	{ path: 'game', component: GameComponent, title: 'بازی' , data: { animationState: 'game' }},
 	{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard], title: 'سامانه شناسایی آسیب اجتماعی', data: { animationState: 'admin' } },
 	//my code
-	{ path: 'mbti', component: MBTIComponent,title:'تست MBTI'}
+	{ path: 'mbti', component: MBTIComponent,title:'تست MBTI'},
+	{ path : 'disc', component: DISCComponent,title: 'تست DISC'},
   ];
 
 @NgModule({

@@ -1,0 +1,66 @@
+<div class="disc">
+    <p style="background-color: white; font-size: larger; border-bottom: 1px solid rgb(255, 0, 0);"> تست DISC</p>
+    <div class="questions">
+        <p style="   color: blue;
+        border-bottom: 1px solid rgb(255, 0, 0);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        text-align: right;" *ngFor="let question of questions; index as i">
+            {{i+1}}-{{question.text}}
+            <br>
+            <input type="radio" name="answer{{i}}" value="D+">{{question.answer1}}
+            <input type="radio" name="answer{{i}}" value="I+">{{question.answer2}}
+            <input type="radio" name="answer{{i}}" value="S+">{{question.answer3}}
+            <input type="radio" name="answer{{i}}" value="C+">{{question.answer4}}
+            <br>
+            <br> --{{question.text2}}
+            <br>
+            <input type="radio" name="answer2{{i}}" value="D-">{{question.answer1}}
+            <input type="radio" name="answer2{{i}}" value="I-">{{question.answer2}}
+            <input type="radio" name="answer2{{i}}" value="S-">{{question.answer3}}
+            <input type="radio" name="answer2{{i}}" value="C-">{{question.answer4}}
+            <br>
+
+
+        </p>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <p>تمامی خرد بشر، در این دو کلمه خلاصه می شود: صبر و امید! “الکساندر دوما”</p>
+</footer>
