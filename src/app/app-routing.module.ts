@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AuthComponent } from './auth/auth.component';
 import { EducationComponent } from './education/education.component';
 import { EntertainmentComponent } from './entertainment/entertainment.component';
@@ -8,6 +7,7 @@ import { ForumComponent } from './forum/forum.component';
 import { AdminComponent } from './admin/admin.component';
 import { GameComponent } from './game/game.component';
 import { AuthGuard } from './auth.guard';
+import { MBTIComponent } from './mbti/mbti.component';
 
 const routes: Routes = [
 	{ path: '', pathMatch: 'full', redirectTo: 'login'},
@@ -16,7 +16,9 @@ const routes: Routes = [
 	{ path: 'entertain', component: EntertainmentComponent, title: 'سرگرمی' , data: { animationState: 'entertain' }},
 	{ path: 'forum', component: ForumComponent, title: 'انجمن', data: { animationState: 'forum' } },
 	{ path: 'game', component: GameComponent, title: 'بازی' , data: { animationState: 'game' }},
-	{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard], title: 'سامانه شناسایی آسیب اجتماعی', data: { animationState: 'admin' } }
+	{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard], title: 'سامانه شناسایی آسیب اجتماعی', data: { animationState: 'admin' } },
+	//my code
+	{ path: 'mbti', component: MBTIComponent,title:'تست MBTI'}
   ];
 
 @NgModule({

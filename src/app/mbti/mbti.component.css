@@ -1,0 +1,32 @@
+.MBTI {
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: white;
+    overflow-y: scroll;
+    text-align: center;
+    border-radius: 1%;
+    padding-top: 0px;
+    padding-bottom: 100px;
+    height: 600px;
+}
+
+.questions {
+    color: blue;
+    border-bottom: 1px solid rgb(255, 0, 0);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.footer {
+    position: absolute;
+}
+
+.check-button {
+    font-size: larger;
+    text-align: center;
+    color: blue;
+    background-color: white;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 24px;
+}

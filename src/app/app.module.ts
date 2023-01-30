@@ -12,6 +12,8 @@ import { ForumComponent } from './forum/forum.component';
 import { UnityComponent } from './unity/unity.component';
 import { GameComponent } from './game/game.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//my code
+import { MBTIComponent } from './mbti/mbti.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EntertainmentComponent,
     ForumComponent,
     UnityComponent,
-    GameComponent
+    GameComponent,
+    //my code
+    MBTIComponent
   ],
   imports: [
 	BrowserAnimationsModule,
