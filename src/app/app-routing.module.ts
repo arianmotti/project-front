@@ -12,12 +12,18 @@ import { MBTIComponent } from './mbti/mbti.component';
 import { DISCComponent } from './disc/disc.component';
 
 const routes: Routes = [
+	//its the defult path
 	{ path: '', pathMatch: 'full', redirectTo: 'login'},
 	{ path: 'login', component: AuthComponent, title: 'ورود به سامانه' , data: { animationState: 'login' }},
+	//only 3 buttons and return
 	{ path: 'education', component: EducationComponent, title: 'آموزش' , data: { animationState: 'education' }},
+	//two games and return
 	{ path: 'entertain', component: EntertainmentComponent, title: 'سرگرمی' , data: { animationState: 'entertain' }},
+	//same with educarion!
 	{ path: 'forum', component: ForumComponent, title: 'انجمن', data: { animationState: 'forum' } },
+	//nothing only return
 	{ path: 'game', component: GameComponent, title: 'بازی' , data: { animationState: 'game' }},
+	//nothing to load (need backend i think)
 	{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard], title: 'سامانه شناسایی آسیب اجتماعی', data: { animationState: 'admin' } },
 	//my code
 	{ path: 'mbti', component: MBTIComponent,title:'تست MBTI'},

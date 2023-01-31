@@ -17,6 +17,7 @@ export class MBTIComponent implements OnInit {
   ngOnInit(): void {
   }
   calculate_mbti(){
+    this.result=''
     if(this.answers.includes(null)){
       this.allnotanswered=true
     } else{
