@@ -8,21 +8,28 @@
         text-align: right;" *ngFor="let question of questions; index as i">
             {{i+1}}-{{question.text}}
             <br>
-            <input type="radio" name="answer{{i}}" value="D+">{{question.answer1}}
-            <input type="radio" name="answer{{i}}" value="I+">{{question.answer2}}
-            <input type="radio" name="answer{{i}}" value="S+">{{question.answer3}}
-            <input type="radio" name="answer{{i}}" value="C+">{{question.answer4}}
+            <input type="radio" name="answer{{i}}" value="D+" [(ngModel)]="answers[i]">{{question.answer1}}
+            <input type="radio" name="answer{{i}}" value="I+" [(ngModel)]="answers[i]">{{question.answer2}}
+            <input type="radio" name="answer{{i}}" value="S+" [(ngModel)]="answers[i]">{{question.answer3}}
+            <input type="radio" name="answer{{i}}" value="C+" [(ngModel)]="answers[i]">{{question.answer4}}
             <br>
             <br> --{{question.text2}}
             <br>
-            <input type="radio" name="answer2{{i}}" value="D-">{{question.answer1}}
-            <input type="radio" name="answer2{{i}}" value="I-">{{question.answer2}}
-            <input type="radio" name="answer2{{i}}" value="S-">{{question.answer3}}
-            <input type="radio" name="answer2{{i}}" value="C-">{{question.answer4}}
+            <input type="radio" name="answer2{{i}}" value="D-" [(ngModel)]="answers2[i]">{{question.answer1}}
+            <input type="radio" name="answer2{{i}}" value="I-" [(ngModel)]="answers2[i]">{{question.answer2}}
+            <input type="radio" name="answer2{{i}}" value="S-" [(ngModel)]="answers2[i]">{{question.answer3}}
+            <input type="radio" name="answer2{{i}}" value="C-" [(ngModel)]="answers2[i]">{{question.answer4}}
             <br>
 
 
         </p>
+        <button class="check-button" (click)="calculate_disc()">ثبت پاسخ ها </button>
+        <p *ngIf="result">نتیجه ی تست : {{result}}</p>
+        <p *ngIf="allnotanswered" style="	color: red;
+	direction: rtl;
+	text-align: center;
+	margin-bottom: 10px;
+	background: whitesmoke;">به همه ی سوالات پاسخ داده نشده است</p>
     </div>
 
 

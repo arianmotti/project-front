@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { max } from 'rxjs';
 
 @Component({
   selector: 'app-disc',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./disc.component.css']
 })
 export class DISCComponent implements OnInit {
+  result = ''
+  allnotanswered = false
+  answers = Array(28).fill(null)
+  answers2 = Array(28).fill(null)
   questions = [
     {
       text : 'کدام یک از ویژگی های زیر را بیشتر از در خود می بینید؟',
@@ -263,10 +268,64 @@ export class DISCComponent implements OnInit {
    
     ]
 
-
+  
   constructor() { }
 
   ngOnInit(): void {
   }
+  calculate_disc(){
+    if(this.answers.includes(null)){
+      this.allnotanswered=true
+    } else{
+      // console.log(this.answers)
+     var D=0
+     var I=0
+     var S=0
+     var C=0
+     for ( const element of this.answers) {
+      if (element==="D+") {
+        D++;
+      }
+      if (element==="I+") {
+        I++;
+      }
+      if (element==="S+") {
+        S++;
+      }
+      if (element==="C+") {
+        C++;
+      }
+     }
+     for ( const element of this.answers2) {
+      if (element==="D-") {
+        D--;
+      }
+      if (element==="I-") {
+        I--;
+      }
+      if (element==="S-") {
+        S--;
+      }
+      if (element==="C-") {
+        C--;
+      }
+     }
+    const max = Math.max(D,I,S,C);
+    if (max===D) {
+      this.result= 'D';
+    }
+    if (max===I) {
+      this.result= 'I';
+    }
+    if (max===S) {
+      this.result= 'S';
+    }
+    if (max===C) {
+      this.result= 'C';
+    }
 
+
+
+  }
+  }
 }
