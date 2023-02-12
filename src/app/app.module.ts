@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //my code
 import { MBTIComponent } from './mbti/mbti.component';
 import { DISCComponent } from './disc/disc.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { DISCComponent } from './disc/disc.component';
     GameComponent,
     //my code
     MBTIComponent,
-    DISCComponent
+    DISCComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
 	BrowserAnimationsModule,
