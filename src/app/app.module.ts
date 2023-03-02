@@ -18,6 +18,7 @@ import { DISCComponent } from './disc/disc.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { HeaderComponent } from './header/header.component';
     MBTIComponent,
     DISCComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+ 
   ],
   imports: [
 	BrowserAnimationsModule,

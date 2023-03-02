@@ -19,7 +19,7 @@ export class AppComponent {
     // Play the sound.
     this.sound.play();
     // Change global volume.
-    Howler.volume(0.5);
+    Howler.volume(1);
   }
   prepareRoute(outlet: RouterOutlet) {
   return outlet && 
