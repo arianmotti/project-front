@@ -11,15 +11,15 @@ import {Howl, Howler} from 'howler';
 })
 export class AppComponent {
   title = 'سامانه شناسایی آسیب اجتماعی';
-  sound = new Howl({
-	 loop: true,
-     src: ['/assets/bg_music.mp3']
-  });
+  // sound = new Howl({
+	//  loop: true,
+  //    src: ['/assets/bg_music.mp3']
+  // });
   ngOnInit() {
     // Play the sound.
-    this.sound.play();
+    // this.sound.play();
     // Change global volume.
-    Howler.volume(1);
+    // Howler.volume(1);
   }
   prepareRoute(outlet: RouterOutlet) {
   return outlet && 
