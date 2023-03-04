@@ -24,9 +24,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.speech = this.speeches[Math.floor(Math.random() * this.speeches.length)];
+    // const audio = new Audio();
+    // audio.src = 'assets/bg_music.mp3';
+    // audio.load();
+    // audio.play();
 
     
   }
+  
+
+  
   
 
 }

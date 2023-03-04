@@ -23,9 +23,9 @@
 }
 
 .rectangle:hover {
-  transform: scale(1.1);
-  height: 150px;
-  border-radius: 0px;
+  transform: scale(2);
+  /* height: 150px; */
+  border-radius: 50%;
 }
 
 @keyframes slide-in {
@@ -41,3 +41,4 @@ p {
   z-index: 1;
   color: white;
 }
+
