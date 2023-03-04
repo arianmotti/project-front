@@ -3,24 +3,48 @@
   <p> پنج کار خیلی باحال!</p>
 </div>
 <div class="animation-container">
-  <div class="rectangle" id="rectangle-1"> 
+  <div class="rectangle" id="rectangle-1" (click)="show1()"> 
     <img src="./assets/food.jpg" alt="food" style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%;">
   </div>
-  <div class="rectangle" id="rectangle-2">
+  <div class="rectangle" id="rectangle-2" (click)="show2()">
     <img src="./assets/sleep.jpg" alt="food" style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%;">
   </div>
-  <div class="rectangle" id="rectangle-3">
+  <div class="rectangle" id="rectangle-3" (click)="show3()">
     <img src="./assets/talk.jpg" alt="food" style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%;">
   </div>
 
-  <div class="rectangle" id="rectangle-4">
+  <div class="rectangle" id="rectangle-4" (click)="show4()">
     <img src="./assets/sun.jfif" alt="food" style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%;">
   </div>
   
-  <div class="rectangle" id="rectangle-5">
+  <div class="rectangle" id="rectangle-5" (click)="show5()">
     <img src="./assets/bike.jfif" alt="food" style="object-fit: cover; width: 100%; height: 100%; border-radius: 50%;">
   </div>
 </div>
+<div class="grid-container">
+  <div class="card" *ngIf="visible1">
+    <h2>تغذیه ی خوب</h2>
+    <h4>مصرف غذاهای سالم و تغذیه‌ی متنوع به شما کمک می‌کند تا سلامتی و روحیه‌ی خوبی داشته باشید.</h4>
+  </div>
+  <div class="card" *ngIf="visible2">
+    <h2>خواب راحت</h2>
+    <h4>خواب به مدت کافی و به موقع، به شما کمک می‌کند تا انرژی و قدرت لازم برای انجام فعالیت‌های روزانه‌ی خود داشته باشید.</h4>
+  </div>
+  <div class="card" *ngIf="visible3">
+    <h2>ارتباط با دوستان</h2>
+    <h4>اوقات خوبی را با دوستان و خانواده خود بگذرانید. ارتباطات اجتماعی به شما کمک می‌کند که روحیه و انگیزه خوبی داشته باشید.</h4>
+  </div>
+  <div class="card" *ngIf="visible4">
+    <h2>کاهش استرس و فکروخیال</h2>
+    <h4>راه‌های متعددی برای کاهش استرس و فشارهای روزانه‌ی خود دارید، مانند تمرین یوگا، ماساژ، گردش در طبیعت و ...</h4>
+  </div>
+  <div class="card" *ngIf="visible5">
+    <h2>ورزش</h2>
+    <h4>ورزش به شما کمک می‌کند که بدنتان را سالم و قوی نگه دارید. انتخاب ورزش مناسب برای شما می‌تواند تاثیر مثبتی در سلامتی و روحیه‌ی شما داشته باشد.</h4>
+  </div>
+</div>
+
+
 <footer>{{ speech }}</footer>
 
 

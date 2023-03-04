@@ -31,6 +31,26 @@ export class HomeComponent implements OnInit {
 
     
   }
+  visible1=false
+  visible2=false
+  visible3=false
+  visible4=false
+  visible5=false
+  show1(){
+    this.visible1=!this.visible1
+  }
+  show2(){
+    this.visible2=!this.visible2
+  }
+  show3(){
+    this.visible3=!this.visible3
+  }
+  show4(){
+    this.visible4=!this.visible4
+  }
+  show5(){
+    this.visible5=!this.visible5
+  }
   
 
   
