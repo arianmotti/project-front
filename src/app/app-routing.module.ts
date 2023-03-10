@@ -25,7 +25,8 @@ const routes: Routes = [
 	//nothing only return
 	{ path: 'game', component: GameComponent, title: 'بازی' , data: { animationState: 'game' }},
 	//nothing to load (need backend i think)
-	{ path: 'admin', component: AdminComponent, canActivate: [AuthGuard], title: 'سامانه شناسایی آسیب اجتماعی', data: { animationState: 'admin' } },
+	// { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], title: 'سامانه شناسایی آسیب اجتماعی', data: { animationState: 'admin' } },
+	{ path: 'admin', component: AdminComponent, title: 'سامانه شناسایی آسیب اجتماعی', data: { animationState: 'admin' } },
 	//my code
 	{ path: 'mbti', component: MBTIComponent,title:'تست MBTI'},
 	{ path : 'disc', component: DISCComponent,title: 'تست DISC'},

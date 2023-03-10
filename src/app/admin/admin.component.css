@@ -10,6 +10,13 @@ body {
 	width: 31.25em;
 	transform: translate(100%, 0%) scale(0.85);
 }
+p {
+	font-size: 30px;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	color: white;
+  }
 .p1 {
 	transform: translate(-150%, -50%) scale(0.5);
 }
@@ -81,13 +88,13 @@ a:hover {
 	width: 12.5em;
 	border-radius: 50%;
 	position: absolute;
-	background-color: #f5d201;
+	background-color: #5666ba;
 	top: 2.81em;
 	left: 13.75em;
 	cursor: pointer;
 }
 .planet:hover {
-	background-color: #f56801;
+	background-color: #4e01f5;
 }
 
 .planet:before {
