@@ -48,12 +48,15 @@ export class AdminComponent implements OnInit {
 		this.authService.visit(title)
 		setTimeout(()=>{
 			this.authService.sectionTitle = `به سیاره‌ی ${title} خوش اومدی`
-			if(title=='پنج کار')
+      if(title=='مشاوره')
+        this.router.navigateByUrl('/forum');
+			else if(title=='پنج کار')
 				this.router.navigateByUrl('/home');
       else if(title=='mbti')
 				this.router.navigateByUrl('/mbti');
-      if(title=='disc')
+      else if(title=='disc')
         this.router.navigateByUrl('/disc');
 		}, 1200);
+
 	}
 }

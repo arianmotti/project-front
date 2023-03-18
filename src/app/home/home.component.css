@@ -21,12 +21,14 @@
   margin: 10px;
   transition: all 0.3s ease-in-out;
   border-radius: 50px;
+
 }
 
 .rectangle:hover {
   transform: scale(2);
   /* height: 150px; */
   border-radius: 50%;
+  cursor: pointer;
 }
 
 @keyframes slide-in {

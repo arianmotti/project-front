@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
 	<h1 class="login-header">{{authService.sectionTitle}}</h1>
 	<main class="page-content">
 	  <div class="card">
@@ -24,7 +24,107 @@
 	  </div>
 	</main>
 	  <button class="under-btn" (click)="back()">برگرد</button>
+</div> -->
+<!-- <app-header></app-header>
+<div class="top">
+	<p> نه چالش اصلی که توش به مشورت نیاز داریم!</p>
 </div>
-<footer>
-	  <p>اجازه دهید همیشه با لبخند با هم روبرو شویم، زیرا لبخند سرآغاز عشق است. - مادر ترزا</p>
-</footer> 
+<div class="animation-container">
+	<div class="rectangle" id="rectangle-1" style="  background-image: url('/assets/1.jpg');
+  background-size: cover;">
+		<h4>اعتماد به نفس</h4>
+
+	</div>
+	<div class="rectangle" id="rectangle-2" style="  background-image: url('/assets/2.jpg');
+  background-size: cover;">
+		<h4>تصمیم گیری</h4>
+
+	</div>
+	<div class="rectangle" id="rectangle-3" style="  background-image: url('/assets/3.jfif');
+  background-size: cover;">
+		<h4>چالش های عاطفی</h4>
+
+	</div>
+</div>
+<div class="animation-container">
+	<div class="rectangle" id="rectangle-4" style="  background-image: url('/assets/4.jpg');
+	background-size: cover;">
+		<h4>مدیریت بحران</h4>
+
+
+	</div>
+	<div class="rectangle" id="rectangle-5" style="  background-image: url('/assets/5.jfif');
+	background-size: cover;">
+		<h4>بهتر شدن</h4>
+
+	</div>
+	<div class="rectangle" id="rectangle-6" style="  background-image: url('/assets/6.jpg');
+	background-size: cover;">
+		<h4>اعتیاد</h4>
+
+	</div>
+</div>
+<div class="animation-container">
+	<div class="rectangle" id="rectangle-7" style="  background-image: url('/assets/7.jpg');
+	background-size: cover;">
+		<h4>استرس</h4>
+
+	</div>
+	<div class="rectangle" id="rectangle-8" style="  background-image: url('/assets/8.jpg');
+	background-size: cover;">
+		<h4>چالش های درسی</h4>
+
+	</div>
+	<div class="rectangle" id="rectangle-9" style="  background-image: url('/assets/9.jfif');
+	background-size: cover;">
+		<h4>ازدواج</h4>
+
+	</div>
+</div> -->
+<app-header></app-header>
+<div class="top">
+  <p>نه راهی که داریم!</p>
+</div>
+<div class="animation-container">
+  <div class="rectangle" id="rectangle-1" style="background-image: url('/assets/1.jpg'); background-size: cover;">
+    <h4 (click)="showCommentBox('اعتماد به نفس')">اعتماد به نفس</h4>
+  </div>
+  <div class="rectangle" id="rectangle-2" style="background-image: url('/assets/2.jpg'); background-size: cover;">
+    <h4 (click)="showCommentBox('تصمیم گیری')">تصمیم گیری</h4>
+  </div>
+  <div class="rectangle" id="rectangle-3" style="background-image: url('/assets/3.jfif'); background-size: cover;">
+    <h4 (click)="showCommentBox('چالش های عاطفی')">چالش های عاطفی</h4>
+  </div>
+</div>
+<div class="animation-container">
+  <div class="rectangle" id="rectangle-4" style="background-image: url('/assets/4.jpg'); background-size: cover;">
+    <h4 (click)="showCommentBox('مدیریت بحران')">مدیریت بحران</h4>
+  </div>
+  <div class="rectangle" id="rectangle-5" style="background-image: url('/assets/5.jfif'); background-size: cover;">
+    <h4 (click)="showCommentBox('بهتر شدن')">بهتر شدن</h4>
+  </div>
+  <div class="rectangle" id="rectangle-6" style="background-image: url('/assets/6.jpg'); background-size: cover;">
+    <h4 (click)="showCommentBox('اعتیاد')">اعتیاد</h4>
+  </div>
+</div>
+<div class="animation-container">
+  <div class="rectangle" id="rectangle-7" style="background-image: url('/assets/7.jpg'); background-size: cover;">
+    <h4 (click)="showCommentBox('استرس')">استرس</h4>
+  </div>
+  <div class="rectangle" id="rectangle-8" style="background-image: url('/assets/8.jpg'); background-size: cover;">
+    <h4 (click)="showCommentBox('چالش های درسی')">چالش های درسی</h4>
+  </div>
+  <div class="rectangle" id="rectangle-9" style="background-image: url('/assets/9.jfif'); background-size: cover;">
+    <h4 (click)="showCommentBox('ازدواج')">ازدواج</h4>
+  </div>
+</div>
+
+<div class="comment-container" *ngIf="showComment">
+  <h4>{{ currentTitle }}</h4>
+  <form>
+    <textarea></textarea>
+    <div class="buttons">
+      <button type="button" (click)="closeCommentBox()">بی خیالش</button>
+      <button type="submit">حله</button>
+    </div>
+  </form>

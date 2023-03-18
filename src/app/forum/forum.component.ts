@@ -8,14 +8,23 @@ import { AuthService } from  '../auth.service';
   styleUrls: ['./forum.component.css']
 })
 export class ForumComponent implements OnInit {
+  showComment: boolean = false;
+  currentTitle: string = '';
+
+  showCommentBox(title: string) {
+      this.currentTitle = title;
+      this.showComment = true;
+  }
+
+  closeCommentBox() {
+    this.showComment = false;
+  }
+
 
   constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
   
-  back(){
-    this.router.navigateByUrl('/admin');
-  }
 
 }
