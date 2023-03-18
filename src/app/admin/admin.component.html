@@ -3,27 +3,27 @@
 <div class="wrapper">
 	<div class="container">
 		<div class="stars"></div>
-		<div (click)="forum('پنج کار', 'translate(-100%, -75%) scale(0.55)')" class="planet p1">
+		<div (click)="forum('پنج کار', 'translate(-100%, -75%) scale(0.55)')" class="planet p1 hidden" id="planet1">
 			<div class="shadow"></div>
 			<p>پنج کار مفید برای حال بهتر!</p>
 		</div>
-		<div class="planet p2" (click)="forum('بازی و شادی', 'translate(-140%, 0%) scale(0.55)')">
+		<div class="planet p2 hidden" (click)="forum('بازی و شادی', 'translate(-140%, 0%) scale(0.55)')" id="planet2">
 			<div class="shadow"></div>
 			<p>بازی و شادی</p>
 		</div>
-		<div class="planet p3" (click)="forum('disc', 'translate(-100%, 75%) scale(0.55)')">
+		<div class="planet p3 hidden" (click)="forum('disc', 'translate(-100%, 75%) scale(0.55)')" id="planet3">
 			<div class="shadow"></div>
 			<p>رفتارت رو بیشتر بشناس!</p>
 		</div>
-		<div class="planet p4" (click)="forum('گزارش', 'translate(100%, -75%) scale(0.55)')">
+		<div class="planet p4 hidden " (click)="forum('گزارش', 'translate(100%, -75%) scale(0.55)')" id="planet6">
 			<div class="shadow"></div>
 			<p>برامون بنویس!</p>
 		</div>
-		<div class="planet p5" (click)="forum('مشاوره', 'translate(140%, 0%) scale(0.55)')">
+		<div class="planet p5 hidden" (click)="forum('مشاوره', 'translate(140%, 0%) scale(0.55)')" id="planet5">
 			<div class="shadow"></div>
 			<p>مشاوره</p>
 		</div>
-		<div class="planet p6" (click)="forum('mbti', 'translate(100%, 75%) scale(0.55)')">
+		<div class="planet p6 hidden" (click)="forum('mbti', 'translate(100%, 75%) scale(0.55)')" id="planet4">
 			<div class="shadow"></div>
 			<p>خودت رو بیشتر بشناس! </p>
 		</div>
@@ -42,4 +42,44 @@
 	</div>
 	<!-- <a (click)="logout()">خداحافظ</a> -->
 </div>
-<footer>{{ speech }}</footer>
+<!-- <footer>{{ speech }}</footer> -->
+<div class="left-avatar hidden" id="avatar1">
+	<img src="/assets/avatar1.jpg" alt="Avatar" style="border-radius: 50%; width: 100px; height: 100px;">
+	<div class="speech-bubble">
+	  <p>بیا باهام تا پنج تا کار مفید بهت نشون بدم!</p>
+	</div>
+  </div>
+  <div class="left-avatar hidden" id="avatar2">
+	<img src="/assets/avatar2.jpg" alt="Avatar" style="border-radius: 50%; width: 100px; height: 100px;">
+	<div class="speech-bubble">
+	  <p>بریم با هم چند تا مینی گیم انجام بدیم!</p>
+	</div>
+  </div>
+  <div class="left-avatar hidden" id="avatar3">
+	<img src="/assets/avatar3.jpg" alt="Avatar" style="border-radius: 50%; width: 100px; height: 100px;">
+	<div class="speech-bubble">
+	  <p>دوست داری رفتار خودت رو بیشتر بشناسی؟!</p>
+	</div>
+  </div>
+  <div class="right-avatar hidden" id="avatar4">
+	<div class="speech-bubble">
+		<p>دوست داری شخصیت خودت رو بیشتر بشناسی؟!</p>
+	  </div>
+	<img src="/assets/avatar3.jpg" alt="Avatar" style="border-radius: 50%; width: 100px; height: 100px;">
+	
+  </div>
+  <div class="right-avatar hidden" id="avatar5">
+	<div class="speech-bubble">
+		<p>بریم ببینیم آقای مشاور چی داره برامون!</p>
+	  </div>
+	<img src="/assets/avatar4.jpg" alt="Avatar" style="border-radius: 50%; width: 100px; height: 100px;">
+	
+  </div>
+  <div class="right-avatar hidden" id="avatar6">
+	<div class="speech-bubble">
+		<p>بیا اینجا برامون بنویس!</p>
+	  </div>
+	<img src="/assets/avatar5.jpg" alt="Avatar" style="border-radius: 50%; width: 100px; height: 100px;">
+	
+  </div>
+  

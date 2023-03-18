@@ -12,51 +12,103 @@ export class AdminComponent implements OnInit {
   private targetTransform: string = 'scale(0.75) rotate(-30deg) translateX(0.5em) translateY(1.87em);';
   @HostBinding('style.--target-animation')
   private targetAnimation: string = '';
-  speeches = [ '«ظرفیت انسان برای پذیرش امید، شگفت‌انگیزترین حقیقت زندگی است. امید، برای بشر یک مقصد واضح مشخص می‌کند و انرژی لازم را برای شروع کردن به او می‌دهد.',
-  'امیدتان را که از دست بدهید، انگار همه‌چیز را از دست داده‌اید. البته حتی زمانی که فکر می‌کنید همه چیز از دست رفته است، باز هم امید وجود دارد.',
-  'امید مانند ستونی است که جهان را سرپا نگه می‌دارد. امید، رؤیای انسان بیدار است.',
-  'از دیروز درس بگیر، برای امروز، زندگی کن و به فردا امیدوار باش. مهم‌ترین چیز این است که از پرسیدن دست نکشی.',
-  'شما آنچه فکر می کنید احساس می کنید لذا شما می توانید یاد بگیرید در مورد هر چیزی متفاوت فکر نمایید و تصمیم بگیرید.',
-  ' اتفاق اول بايد در درون من رخ دهد تا تكرار آن را در دنياي بيرون ببینم.',
-  'موفقیت از آن کسانی است که یک ثانیه دیرتر نا امید می‌شوند و یک لحظه دیرتر دست از تلاش بر می‌دارند.',
-  'حتی تاریک‌ترین شب‌ها به پایان خواهد رسید و سپبده دم بار دیگر طلوع خواهد کرد.'
-  
+  speeches = ['«ظرفیت انسان برای پذیرش امید، شگفت‌انگیزترین حقیقت زندگی است. امید، برای بشر یک مقصد واضح مشخص می‌کند و انرژی لازم را برای شروع کردن به او می‌دهد.',
+    'امیدتان را که از دست بدهید، انگار همه‌چیز را از دست داده‌اید. البته حتی زمانی که فکر می‌کنید همه چیز از دست رفته است، باز هم امید وجود دارد.',
+    'امید مانند ستونی است که جهان را سرپا نگه می‌دارد. امید، رؤیای انسان بیدار است.',
+    'از دیروز درس بگیر، برای امروز، زندگی کن و به فردا امیدوار باش. مهم‌ترین چیز این است که از پرسیدن دست نکشی.',
+    'شما آنچه فکر می کنید احساس می کنید لذا شما می توانید یاد بگیرید در مورد هر چیزی متفاوت فکر نمایید و تصمیم بگیرید.',
+    ' اتفاق اول بايد در درون من رخ دهد تا تكرار آن را در دنياي بيرون ببینم.',
+    'موفقیت از آن کسانی است که یک ثانیه دیرتر نا امید می‌شوند و یک لحظه دیرتر دست از تلاش بر می‌دارند.',
+    'حتی تاریک‌ترین شب‌ها به پایان خواهد رسید و سپبده دم بار دیگر طلوع خواهد کرد.'
 
-]
- speech:String
-  
-  constructor(public authService: AuthService, private router: Router) { }
+
+  ]
+  speech: String
+
+  constructor(public authService: AuthService, private router: Router) {
+
+  }
+
+
 
   ngOnInit(): void {
+    // Get the elements
+    const avatar1 = document.getElementById("avatar1");
+    const planet1 = document.getElementById("planet1");
+    const avatar2 = document.getElementById("avatar2");
+    const planet2 = document.getElementById("planet2");
+    const avatar3 = document.getElementById("avatar3");
+    const planet3 = document.getElementById("planet3");
+    const avatar4 = document.getElementById("avatar4");
+    const planet4 = document.getElementById("planet4");
+    const avatar5 = document.getElementById("avatar5");
+    const planet5 = document.getElementById("planet5");
+    const avatar6 = document.getElementById("avatar6");
+    const planet6 = document.getElementById("planet6");
+    if (avatar1 !== null && planet1 !== null && avatar2 !== null && planet2 !== null && avatar3 !== null && planet3 !== null
+      && avatar4 !== null && planet4 !== null && avatar5 !== null && planet5 !== null && avatar6 !== null && planet6 !== null) {
+      avatar1.classList.remove("hidden");
+      planet1.classList.remove("hidden");
+      setTimeout(() => {
+        avatar1.classList.add("hidden");
+        avatar3.classList.remove("hidden");
+        planet3.classList.remove("hidden");
+      }, 5000);
+      setTimeout(() => {
+        avatar3.classList.add("hidden");
+        avatar2.classList.remove("hidden");
+        planet2.classList.remove("hidden");
+      }, 2500);
+      setTimeout(() => {
+        avatar4.classList.remove("hidden");
+        avatar2.classList.add("hidden");
+        avatar3.classList.add("hidden")
+        planet4.classList.remove("hidden");
+      }, 7500);
+      setTimeout(() => {
+        avatar4.classList.add("hidden")
+        avatar5.classList.remove("hidden");
+        planet5.classList.remove("hidden");
+      }, 10000);
+      setTimeout(() => {
+        avatar5.classList.add("hidden")
+        avatar6.classList.remove("hidden");
+        planet6.classList.remove("hidden");
+      }, 12500);
+      
+    }
+
+
     this.speech = this.speeches[Math.floor(Math.random() * this.speeches.length)];
   }
-  
-  logout(){
+
+  logout() {
     this.authService.logout();
     this.router.navigateByUrl('/login');
   }
-	
-	education(){
-    this.router.navigateByUrl('/education');
-	}
-	entertain(){
-    this.router.navigateByUrl('/entertain');
-	}
-	forum(title:string, transform:string){
-		this.targetTransform = transform + ' scale(0.75) rotate(0deg)'
-		this.targetAnimation = 'float 3s 1'
-		this.authService.visit(title)
-		setTimeout(()=>{
-			this.authService.sectionTitle = `به سیاره‌ی ${title} خوش اومدی`
-      if(title=='مشاوره')
-        this.router.navigateByUrl('/forum');
-			else if(title=='پنج کار')
-				this.router.navigateByUrl('/home');
-      else if(title=='mbti')
-				this.router.navigateByUrl('/mbti');
-      else if(title=='disc')
-        this.router.navigateByUrl('/disc');
-		}, 1200);
 
-	}
+  education() {
+    this.router.navigateByUrl('/education');
+  }
+  entertain() {
+    this.router.navigateByUrl('/entertain');
+  }
+  forum(title: string, transform: string) {
+    this.targetTransform = transform + ' scale(0.75) rotate(0deg)'
+    this.targetAnimation = 'float 3s 1'
+    this.authService.visit(title)
+    setTimeout(() => {
+      this.authService.sectionTitle = `به سیاره‌ی ${title} خوش اومدی`
+      if (title == 'مشاوره')
+        this.router.navigateByUrl('/forum');
+      else if (title == 'پنج کار')
+        this.router.navigateByUrl('/home');
+      else if (title == 'mbti')
+        this.router.navigateByUrl('/mbti');
+      else if (title == 'disc')
+        this.router.navigateByUrl('/disc');
+    }, 1200);
+
+  }
+
 }
