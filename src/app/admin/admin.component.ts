@@ -75,6 +75,11 @@ export class AdminComponent implements OnInit {
         avatar6.classList.remove("hidden");
         planet6.classList.remove("hidden");
       }, 12500);
+      setTimeout(() => {
+      
+        avatar6.classList.add("hidden");
+     
+      }, 15000);
       
     }
 
