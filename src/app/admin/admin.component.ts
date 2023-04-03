@@ -24,6 +24,10 @@ export class AdminComponent implements OnInit {
 
   ]
   speech: String
+  firstTime : boolean
+  showMap : boolean 
+  showKey : boolean
+  showTreasure: boolean
 
   constructor(public authService: AuthService, private router: Router) {
 
@@ -32,6 +36,10 @@ export class AdminComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.showMap = true
+    this.firstTime = true;
+    this.showKey = false;
+    this.showTreasure = false;
     // Get the elements
     const avatar1 = document.getElementById("avatar1");
     const planet1 = document.getElementById("planet1");
@@ -80,11 +88,59 @@ export class AdminComponent implements OnInit {
         avatar6.classList.add("hidden");
      
       }, 15000);
+      this.firstTime = false
+      setTimeout(() => {
+        avatar1.classList.remove("hidden");
+        
+      }, 17000);
+      setTimeout(() => {
+        avatar1.classList.add("hidden");
+        avatar2.classList.remove("hidden");
+        
+      }, 19000);
+      setTimeout(() => {
+        avatar2.classList.add("hidden");
+        avatar3.classList.remove("hidden");
+        
+      }, 21000);
+      setTimeout(() => {
+        avatar3.classList.add("hidden");
+        avatar4.classList.remove("hidden");
+        
+      }, 23000);
+      setTimeout(() => {
+        avatar4.classList.add("hidden");
+        avatar5.classList.remove("hidden");
+        
+      }, 25000);
+      setTimeout(() => {
+        avatar5.classList.add("hidden");
+        avatar6.classList.remove("hidden");
+        
+      }, 25000);
+      setTimeout(() => {
+        avatar6.classList.add("hidden");
+        
+      }, 27000);
+     
+    
       
     }
 
 
+
     this.speech = this.speeches[Math.floor(Math.random() * this.speeches.length)];
+  }
+  map(){
+    this.showMap= false;
+    this.showKey= true;
+  }
+  key(){
+    this.showKey = false;
+    this.showTreasure = true;
+  }
+  treasure(){
+    this.showTreasure = false;
   }
 
   logout() {
