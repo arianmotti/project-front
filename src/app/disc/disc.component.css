@@ -1,19 +1,94 @@
-.disc {
-    margin-left: 20%;
-    margin-right: 20%;
-    background-color: white;
-    overflow-y: scroll;
-    text-align: center;
-    border-radius: 1%;
-    padding-top: 0px;
-    padding-bottom: 100px;
-    height: 600px;
-}
 
-.question {
-    color: blue;
-    border-bottom: 1px solid rgb(255, 0, 0);
-    padding-bottom: 20px;
+   .disc {
+    margin: 0 auto;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .disc h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0072C6;
+  }
+  
+  .disc .questions {
+    margin-top: 40px;
+  }
+  
+  .disc .question {
     margin-bottom: 20px;
-    text-align: right;
-}
+  }
+  
+  .disc .question p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .disc .question input[type='radio'] {
+    margin-right: 10px;
+  }
+  
+  .disc .pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .disc .pagination button {
+    background-color: #0072C6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .disc .pagination button:hover {
+    background-color: #005F6B;
+  }
+  
+  .disc .pagination span {
+    font-size: 1.2rem;
+    color: #444;
+  }
+  
+  .disc .submit-button {
+
+    margin-top: 20px;
+    background-color: #0072C6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .disc .submit-button:hover {
+    background-color: #005F6B;
+  }
+  
+  .disc .result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #444;
+    text-align: center;
+  }
+  
+  .disc .all-not-answered {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #FF0000;
+    text-align: center;
+  }
+  
