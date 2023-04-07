@@ -99,3 +99,10 @@
 <div *ngIf="showTreasure" (click)="treasure()">
 	<img class="treasure" src="assets/treasure.png" alt="Image">
 </div>
+<div id="myModal" *ngIf="showDialog">
+	<div id="modalContent">
+		<p>نوشته ی داخل گنج : </p>
+	  <p>{{this.speech}}</p>
+	  <button id="closeButton" (click)="closeDialog()">!باشه</button>
+	</div>
+  </div>

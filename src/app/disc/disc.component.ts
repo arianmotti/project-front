@@ -7,6 +7,8 @@ import { max } from 'rxjs';
   styleUrls: ['./disc.component.css']
 })
 export class DISCComponent implements OnInit {
+  currentPage = 1;
+  itemsPerPage = 1;
   result = ''
   allnotanswered = false
   answers = Array(28).fill(null)
@@ -272,6 +274,15 @@ export class DISCComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  getQuestionsForCurrentPage() {
+    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+    const endIndex = this.currentPage * this.itemsPerPage;
+    return this.questions.slice(startIndex, endIndex);
+  }
+
+  getTotalPages() {
+    return Math.ceil(this.questions.length / this.itemsPerPage);
   }
   calculate_disc(){
     if(this.answers.includes(null)){

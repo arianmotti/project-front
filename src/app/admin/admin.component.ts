@@ -28,6 +28,7 @@ export class AdminComponent implements OnInit {
   showMap : boolean 
   showKey : boolean
   showTreasure: boolean
+  showDialog : boolean
 
   constructor(public authService: AuthService, private router: Router) {
 
@@ -40,6 +41,7 @@ export class AdminComponent implements OnInit {
     this.firstTime = true;
     this.showKey = false;
     this.showTreasure = false;
+    this.showDialog = false;
     // Get the elements
     const avatar1 = document.getElementById("avatar1");
     const planet1 = document.getElementById("planet1");
@@ -141,6 +143,14 @@ export class AdminComponent implements OnInit {
   }
   treasure(){
     this.showTreasure = false;
+    this.showDialog = true;
+  }
+  closeDialog() {
+    // Hide the dialog box
+    this.showDialog = false;
+
+    // Show the treasure image
+    // this.showTreasure = true;
   }
 
   logout() {
