@@ -39,27 +39,26 @@
 </div> -->
 <div class="disc">
     <p style="background-color: white; font-size: larger; border-bottom: 1px solid rgb(255, 0, 0);"> تست DISC</p>
-    <div class="questions">
-      <p *ngFor="let question of getQuestionsForCurrentPage(); let i = index">
-        {{(currentPage - 1) * itemsPerPage + i + 1}}-{{question.text}}
-        <br>
-        <input type="radio" name="answer{{(currentPage - 1) * itemsPerPage + i}}" value="D+" [(ngModel)]="answers[(currentPage - 1) * itemsPerPage + i]">{{question.answer1}}
-        <input type="radio" name="answer{{(currentPage - 1) * itemsPerPage + i}}" value="I+" [(ngModel)]="answers[(currentPage - 1) * itemsPerPage + i]">{{question.answer2}}
-        <input type="radio" name="answer{{(currentPage - 1) * itemsPerPage + i}}" value="S+" [(ngModel)]="answers[(currentPage - 1) * itemsPerPage + i]">{{question.answer3}}
-        <input type="radio" name="answer{{(currentPage - 1) * itemsPerPage + i}}" value="C+" [(ngModel)]="answers[(currentPage - 1) * itemsPerPage + i]">{{question.answer4}}
-        <br>
-        <br>
-        {{(currentPage - 1) * itemsPerPage + i + 1}}-{{question.text2}}
-        <br>
-        <input type="radio" name="answer{{(currentPage - 1) * itemsPerPage + i}}" value="D-" [(ngModel)]="answers2[(currentPage - 1) * itemsPerPage + i]">{{question.answer1}}
-        <input type="radio" name="answer{{(currentPage - 1) * itemsPerPage + i}}" value="I-" [(ngModel)]="answers2[(currentPage - 1) * itemsPerPage + i]">{{question.answer2}}
-        <input type="radio" name="answer{{(currentPage - 1) * itemsPerPage + i}}" value="S-" [(ngModel)]="answers2[(currentPage - 1) * itemsPerPage + i]">{{question.answer3}}
-        <input type="radio" name="answer{{(currentPage - 1) * itemsPerPage + i}}" value="C-" [(ngModel)]="answers2[(currentPage - 1) * itemsPerPage + i]">{{question.answer4}}
-        <br>
-        <br>
 
-      </p>
-    </div>
+    <div class="question" *ngFor="let question of getQuestionsForCurrentPage(); let i = index">
+        <p>{{(currentPage - 1) * itemsPerPage + i + 1}}-{{question.text}}</p>
+        <div class="answer-grid">
+          <div class="answer" [class.selected]="question.selectedD" (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'D+')">{{question.answer1}}</div>
+          <div class="answer" [class.selected]="question.selectedI" (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'I+')">{{question.answer2}}</div>
+          <div class="answer" [class.selected]="question.selectedS" (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'S+')">{{question.answer3}}</div>
+          <div class="answer" [class.selected]="question.selectedC" (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'C+')">{{question.answer4}}</div>
+        </div>
+        <br>
+        <p>{{(currentPage - 1) * itemsPerPage + i + 1}}-{{question.text2}}</p>
+        <div class="answer-grid">
+          <div class="answer" [class.selected]="question.selected2D" (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'D-')">{{question.answer1}}</div>
+          <div class="answer" [class.selected]="question.selected2I" (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'I-')">{{question.answer2}}</div>
+          <div class="answer" [class.selected]="question.selected2S" (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'S-')">{{question.answer3}}</div>
+          <div class="answer" [class.selected]="question.selected2C" (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'C-')">{{question.answer4}}</div>
+        </div>
+        <br>
+      </div>
+      
     <div class="pagination">
       <button class="check-button" [disabled]="currentPage == 1" (click)="currentPage = currentPage - 1">صفحه قبل</button>
       <span>{{currentPage}}/{{getTotalPages()}}</span>

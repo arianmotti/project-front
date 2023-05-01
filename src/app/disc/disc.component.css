@@ -1,4 +1,4 @@
-
+/* 
    .disc {
     margin: 0 auto;
     width: 80%;
@@ -91,4 +91,225 @@
     color: #FF0000;
     text-align: center;
   }
+  .questions {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+  }
+  
+  .questions p {
+    margin-bottom: 10px;
+  }
+  
+  .questions input[type=radio] {
+    margin-right: 10px;
+  }
+  
+  .questions br {
+    line-height: 2;
+  }
+  
+  .questions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .questions p {
+    margin-bottom: 1rem;
+  }
+  
+  .question-text {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .answers-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .answer-option {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .answer-option label {
+    margin-left: 0.5rem;
+  }
+  
+  .answer-option input[type="button"] {
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .answer-option input[type="button"]:checked {
+    background-color: #aaa;
+  }
+  
+  .answer-label {
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+   */
+   .disc {
+    margin: 0 auto;
+    width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .disc h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0072C6;
+  }
+  
+  .disc .questions {
+    margin-top: 40px;
+  }
+  
+  .disc .question {
+    margin-bottom: 20px;
+  }
+  
+  .disc .question p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .disc .question input[type='radio'] {
+    margin-right: 10px;
+  }
+  
+  .disc .pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .disc .pagination button {
+    background-color: #0072C6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .disc .pagination button:hover {
+    background-color: #005F6B;
+  }
+  
+  .disc .pagination span {
+    font-size: 1.2rem;
+    color: #444;
+  }
+  
+  .disc .submit-button {
+    margin-top: 20px;
+    background-color: #0072C6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .disc .submit-button:hover {
+    background-color: #005F6B;
+  }
+  
+  .disc .result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #444;
+    text-align: center;
+  }
+  
+  .disc .all-not-answered {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #FF0000;
+    text-align: center;
+  }
+  
+  .questions {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+  }
+  
+  .questions p {
+    margin-bottom: 10px;
+  }
+  
+  .questions input[type=radio] {
+    margin-right: 10px;
+  }
+  
+  .questions br {
+    line-height: 2;
+  }
+  
+  .questions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .questions p {
+    margin-bottom: 1rem;
+  }
+  .answer {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .answer {
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .answer:hover {
+    background-color: #E5E5E5;
+  }
+  
+  .answer.selected {
+    background-color: #4c4caf;
+    color: #ffffff;
+  }
+  
+  
   
