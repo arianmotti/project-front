@@ -63,34 +63,50 @@ export class AdminComponent implements OnInit {
         avatar1.classList.add("hidden");
         avatar3.classList.remove("hidden");
         planet3.classList.remove("hidden");
+        planet2.classList.add("hidden");
       }, 5000);
       setTimeout(() => {
         avatar3.classList.add("hidden");
         avatar2.classList.remove("hidden");
         planet2.classList.remove("hidden");
+        planet1.classList.add("hidden");
       }, 2500);
       setTimeout(() => {
         avatar4.classList.remove("hidden");
         avatar2.classList.add("hidden");
         avatar3.classList.add("hidden")
         planet4.classList.remove("hidden");
+        planet3.classList.add("hidden");
       }, 7500);
       setTimeout(() => {
         avatar4.classList.add("hidden")
         avatar5.classList.remove("hidden");
         planet5.classList.remove("hidden");
+        planet4.classList.add("hidden");
       }, 10000);
       setTimeout(() => {
         avatar5.classList.add("hidden")
         avatar6.classList.remove("hidden");
         planet6.classList.remove("hidden");
+        planet5.classList.add("hidden");
       }, 12500);
       setTimeout(() => {
       
         avatar6.classList.add("hidden");
+        planet6.classList.add("hidden");
      
       }, 15000);
       this.firstTime = false
+      setTimeout(() => {
+        planet1.classList.remove("hidden");
+        planet2.classList.remove("hidden");
+        planet3.classList.remove("hidden");
+        planet4.classList.remove("hidden");
+        planet5.classList.remove("hidden");
+        planet6.classList.remove("hidden");
+        
+        
+      }, 15500);
       setTimeout(() => {
         avatar1.classList.remove("hidden");
         
