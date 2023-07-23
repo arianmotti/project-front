@@ -49,3 +49,50 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 	margin-bottom: 10px;
 	background: whitesmoke;
 }
+.avatar{
+	margin-top: 20px;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Style for the container div that holds the rectangles */
+.emoji { /* Replaced ".container" with ".emoji" */
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 40px;
+  }	
+  
+  .rectangle {
+	flex: 0 0 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* border: 0px solid #ccc;
+	border-radius: px; */
+	margin: 5px;
+	overflow: hidden;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+	/* Existing styles */
+	/* Add a conditional scaling */
+	transform: scale(1);
+  }
+  .rectangle img {
+	object-fit: cover;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+  }
+  .rectangle:hover {
+	transform: scale(2);
+	/* height: 150px; */
+	border-radius: 50%;
+	cursor: pointer;
+	
+  }
+  
+
+  
+  

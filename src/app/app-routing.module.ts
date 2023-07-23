@@ -14,7 +14,7 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
 	//its the defult path
-	{ path: '', pathMatch: 'full', redirectTo: 'home'},
+	{ path: '', pathMatch: 'full', redirectTo: 'login'},
 	{ path: 'login', component: AuthComponent, title: 'ورود به سامانه' , data: { animationState: 'login' }},
 	//only 3 buttons and return
 	{ path: 'education', component: EducationComponent, title: 'آموزش' , data: { animationState: 'education' }},

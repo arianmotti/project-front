@@ -55,6 +55,15 @@ export class AuthComponent implements OnInit {
 		}
 	});
   }
+  inputText: string = ''; // Property to store the text in the input field
+  lastClickedImageName: string = ''; // Property to store the name of the last clicked image
+
+  // Method to update the input field with the name of the clicked image
+  updateInput(imageName: string) {
+    this.inputText = imageName;
+    this.lastClickedImageName = imageName;
+  }
+
 
   ngOnInit(): void {
   this.authForm  =  this.formBuilder.group({
@@ -62,13 +71,17 @@ export class AuthComponent implements OnInit {
         question: ['', Validators.required],
         password: ['', Validators.required]
     });
+
   }
   
   onKeyUp() {
+
 	if(this.currentUsername.length >= 3)
 		this.dataListOptions = this.allUsernames.filter(x=>x.startsWith(this.currentUsername))
 	else
 		this.dataListOptions = []
+
+
   }
 
 get formControls() { return this.authForm.controls; }
