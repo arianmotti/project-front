@@ -8,13 +8,14 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  username = ''
+  sharedName: string = '';
 
-  constructor(private route: Router , private authService: AuthService) {
-    this.username = authService.username;
+  constructor(private route: Router ) {
+    this.sharedName = localStorage.getItem('sharedName') || '';
    }
 
   ngOnInit(): void {
+
   }
 
 }
