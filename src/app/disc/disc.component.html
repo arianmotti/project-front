@@ -70,6 +70,13 @@
     <p *ngIf="result">نتیجه ی تست : {{result}}</p>
     <p *ngIf="allnotanswered" style="color: red; direction: rtl; text-align: center; margin-bottom: 10px; background: whitesmoke;">به همه ی سوالات پاسخ داده نشده است</p>
   </div>
+<div class="progress-container">
+  <div class="progress-bar">
+    <div class="progress" [style.width.%]="progressPercentage"></div>
+  </div>
+</div>
+  
+  
   
 
 
