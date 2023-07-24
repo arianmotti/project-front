@@ -40,7 +40,8 @@ export class AdminComponent implements OnInit {
     this.showMap = true
     this.firstTime = true;
     this.showKey = false;
-    this.showTreasure = false;
+    // this.showTreasure = false;
+    this.showTreasure= true;
     this.showDialog = false;
     // Get the elements
     const avatar1 = document.getElementById("avatar1");
@@ -96,7 +97,7 @@ export class AdminComponent implements OnInit {
         planet6.classList.add("hidden");
      
       }, 15000);
-      this.firstTime = false
+     
       setTimeout(() => {
         planet1.classList.remove("hidden");
         planet2.classList.remove("hidden");
@@ -107,7 +108,9 @@ export class AdminComponent implements OnInit {
         
         
       }, 15500);
+      
       setTimeout(() => {
+        this.firstTime = false
         avatar1.classList.remove("hidden");
         
       }, 17000);
