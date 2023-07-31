@@ -3,27 +3,27 @@
 <div class="wrapper">
 	<div class="container">
 		<div class="stars"></div>
-		<div (click)="forum('پنج کار', 'translate(-100%, -75%) scale(0.55)')" class="planet p1 hidden" id="planet1">
+		<div (click)="addItemToSharedArray('پنج کار')" (click)="forum('پنج کار', 'translate(-100%, -75%) scale(0.55)')" class="planet p1 hidden" id="planet1">
 			<div class="shadow"></div>
 			<p>پنج کار مفید برای حال بهتر!</p>
 		</div>
-		<div class="planet p2 hidden" (click)="forum('بازی و شادی', 'translate(-140%, 0%) scale(0.55)')" id="planet2">
+		<div (click)="addItemToSharedArray('بازی')" class="planet p2 hidden" (click)="forum('بازی و شادی', 'translate(-140%, 0%) scale(0.55)')" id="planet2">
 			<div class="shadow"></div>
 			<p>بازی و شادی</p>
 		</div>
-		<div class="planet p3 hidden" (click)="forum('disc', 'translate(-100%, 75%) scale(0.55)')" id="planet3">
+		<div (click)="addItemToSharedArray('disc')" class="planet p3 hidden" (click)="forum('disc', 'translate(-100%, 75%) scale(0.55)')" id="planet3">
 			<div class="shadow"></div>
 			<p>رفتارت رو بیشتر بشناس!</p>
 		</div>
-		<div class="planet p4 hidden " (click)="forum('گزارش', 'translate(100%, -75%) scale(0.55)')" id="planet6">
+		<div (click)="addItemToSharedArray('گزارش')" class="planet p4 hidden " (click)="forum('گزارش', 'translate(100%, -75%) scale(0.55)')" id="planet6">
 			<div class="shadow"></div>
 			<p>برامون بنویس!</p>
 		</div>
-		<div class="planet p5 hidden" (click)="forum('مشاوره', 'translate(140%, 0%) scale(0.55)')" id="planet5">
+		<div (click)="addItemToSharedArray('مشاوره')" class="planet p5 hidden" (click)="forum('مشاوره', 'translate(140%, 0%) scale(0.55)')" id="planet5">
 			<div class="shadow"></div>
 			<p>مشاوره</p>
 		</div>
-		<div class="planet p6 hidden" (click)="forum('mbti', 'translate(100%, 75%) scale(0.55)')" id="planet4">
+		<div (click)="addItemToSharedArray('mbti')" class="planet p6 hidden" (click)="forum('mbti', 'translate(100%, 75%) scale(0.55)')" id="planet4">
 			<div class="shadow"></div>
 			<p>خودت رو بیشتر بشناس! </p>
 		</div>
@@ -97,7 +97,7 @@
 	<img class="key" src="assets/key.png" alt="Image">
 </div>
 -->
-<div *ngIf="showTreasure" (click)="treasure()">
+<div (click)="addItemToSharedArray('گنج سخن')" *ngIf="showTreasure" (click)="treasure()">
 	<img class="treasure" src="assets/treasure.png" alt="Image">
 </div>
 <div id="myModal" *ngIf="showDialog">

@@ -1,6 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-admin',
@@ -30,7 +31,7 @@ export class AdminComponent implements OnInit {
   showTreasure: boolean
   showDialog : boolean
 
-  constructor(public authService: AuthService, private router: Router) {
+  constructor(public authService: AuthService, private router: Router , private localStorageService: LocalStorageService) {
 
   }
 
@@ -199,6 +200,9 @@ export class AdminComponent implements OnInit {
         this.router.navigateByUrl('/disc');
     }, 1200);
 
+  }
+  addItemToSharedArray(item: any) {
+    this.localStorageService.addItemToArray(item);
   }
 
 }

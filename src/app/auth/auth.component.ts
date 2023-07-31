@@ -5,6 +5,7 @@ import { User } from '../user';
 import { Login } from '../login';
 import { AuthService } from '../auth.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { LocalStorageService } from '../local-storage.service';
 
 @Component({
   selector: 'app-auth',
@@ -44,7 +45,7 @@ export class AuthComponent implements OnInit {
   allUsernames: string[] = [];
   dataListOptions: string[] = [];
 
-  constructor(public authService: AuthService, private router: Router, private formBuilder: FormBuilder) {
+  constructor(public authService: AuthService, private router: Router, private formBuilder: FormBuilder, private localStorageService: LocalStorageService) {
     this.state = 'init'
     authService.getUsernames().subscribe(
       (data: Login) => {
@@ -73,6 +74,9 @@ export class AuthComponent implements OnInit {
     });
 
   }
+  addItemToSharedArray(item: any) {
+    this.localStorageService.addItemToArray(item);
+  }
 
   onKeyUp() {
 
@@ -99,6 +103,7 @@ export class AuthComponent implements OnInit {
       this.isSubmitted = true
 
     localStorage.setItem('sharedName', this.currentUsername);
+
   }
 
   goLogin() {

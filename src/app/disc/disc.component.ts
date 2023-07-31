@@ -560,7 +560,11 @@ export class DISCComponent implements OnInit {
   getTotalPages() {
     return Math.ceil(this.questions.length / this.itemsPerPage);
   }
+  disc_types() {
+    
+  }
   calculate_disc() {
+    this.allnotanswered = false
     if (this.answers.includes(null)) {
       this.allnotanswered = true
     } else {

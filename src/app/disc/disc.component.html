@@ -38,46 +38,59 @@
 
 </div> -->
 <div class="disc">
-    <p style="background-color: white; font-size: larger; border-bottom: 1px solid rgb(255, 0, 0);"> تست DISC</p>
+  <p style="background-color: white; font-size: larger; border-bottom: 1px solid rgb(255, 0, 0);"> تست DISC</p>
 
-    <div class="question" *ngFor="let question of getQuestionsForCurrentPage(); let i = index">
-        <p>{{(currentPage - 1) * itemsPerPage + i + 1}}-{{question.text}}</p>
-        <div class="answer-grid">
-          <div class="answer" [class.selected]="question.selectedD" (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'D+')">{{question.answer1}}</div>
-          <div class="answer" [class.selected]="question.selectedI" (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'I+')">{{question.answer2}}</div>
-          <div class="answer" [class.selected]="question.selectedS" (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'S+')">{{question.answer3}}</div>
-          <div class="answer" [class.selected]="question.selectedC" (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'C+')">{{question.answer4}}</div>
-        </div>
-        <br>
-        <p>{{(currentPage - 1) * itemsPerPage + i + 1}}-{{question.text2}}</p>
-        <div class="answer-grid">
-          <div class="answer" [class.selected]="question.selected2D" (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'D-')">{{question.answer1}}</div>
-          <div class="answer" [class.selected]="question.selected2I" (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'I-')">{{question.answer2}}</div>
-          <div class="answer" [class.selected]="question.selected2S" (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'S-')">{{question.answer3}}</div>
-          <div class="answer" [class.selected]="question.selected2C" (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'C-')">{{question.answer4}}</div>
-        </div>
-        <br>
-      </div>
-      
-    <div class="pagination">
-      <button class="check-button" [disabled]="currentPage == 1" (click)="currentPage = currentPage - 1">صفحه قبل</button>
-      <span>{{currentPage}}/{{getTotalPages()}}</span>
-      <button class="check-button" [disabled]="currentPage * itemsPerPage >= questions.length" (click)="currentPage = currentPage + 1">صفحه بعد</button>
+  <div class="question" *ngFor="let question of getQuestionsForCurrentPage(); let i = index">
+    <p>{{(currentPage - 1) * itemsPerPage + i + 1}}-{{question.text}}</p>
+    <div class="answer-grid">
+      <div class="answer" [class.selected]="question.selectedD"
+        (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'D+')">{{question.answer1}}</div>
+      <div class="answer" [class.selected]="question.selectedI"
+        (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'I+')">{{question.answer2}}</div>
+      <div class="answer" [class.selected]="question.selectedS"
+        (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'S+')">{{question.answer3}}</div>
+      <div class="answer" [class.selected]="question.selectedC"
+        (click)="setAnswer((currentPage - 1) * itemsPerPage + i, 'C+')">{{question.answer4}}</div>
     </div>
-    <div style="text-align: center;">
-    <button class="submit-button" (click)="calculate_disc()">ثبت پاسخ ها </button>
-</div>
-    <p *ngIf="result">نتیجه ی تست : {{result}}</p>
-    <p *ngIf="allnotanswered" style="color: red; direction: rtl; text-align: center; margin-bottom: 10px; background: whitesmoke;">به همه ی سوالات پاسخ داده نشده است</p>
+    <br>
+    <p>{{(currentPage - 1) * itemsPerPage + i + 1}}-{{question.text2}}</p>
+    <div class="answer-grid">
+      <div class="answer" [class.selected]="question.selected2D"
+        (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'D-')">{{question.answer1}}</div>
+      <div class="answer" [class.selected]="question.selected2I"
+        (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'I-')">{{question.answer2}}</div>
+      <div class="answer" [class.selected]="question.selected2S"
+        (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'S-')">{{question.answer3}}</div>
+      <div class="answer" [class.selected]="question.selected2C"
+        (click)="setAnswer2((currentPage - 1) * itemsPerPage + i, 'C-')">{{question.answer4}}</div>
+    </div>
+    <br>
   </div>
+
+  <div class="pagination">
+    <button class="check-button" [disabled]="currentPage == 1" (click)="currentPage = currentPage - 1">صفحه قبل</button>
+    <span>{{currentPage}}/{{getTotalPages()}}</span>
+    <button class="check-button" [disabled]="currentPage * itemsPerPage >= questions.length"
+      (click)="currentPage = currentPage + 1">صفحه بعد</button>
+  </div>
+  <div style="text-align: center;">
+    <button class="submit-button" (click)="calculate_disc()">ثبت پاسخ ها </button>
+  </div>
+  <p *ngIf="result">نتیجه ی تست : {{result}}</p>
+  <div style="text-align: center;">
+    <button class="submit-button" (click)="disc_types()">چه جالب بریم ببینیم چی هست </button>
+  </div>
+  <p *ngIf="allnotanswered"
+    style="color: red; direction: rtl; text-align: center; margin-bottom: 10px; background: whitesmoke;">به همه ی سوالات
+    پاسخ داده نشده است</p>
 <div class="progress-container">
   <div class="progress-bar">
     <div class="progress" [style.width.%]="progressPercentage"></div>
   </div>
 </div>
-  
-  
-  
+
+
+
 
 
 

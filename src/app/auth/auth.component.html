@@ -71,15 +71,15 @@
     <h2 *ngIf="!authService.last_visit" class="small login-header">حالت چطوره؟</h2>
     <div class="emoji"> <!-- Replaced "container" with "emoji" -->
         <div class="rectangle">
-            <img src="./assets/happy.png" alt="happy" (click)="updateInput('خوشحالم')">
+            <img src="./assets/happy.png" alt="happy" (click)="updateInput('خوشحالم')" (click)="addItemToSharedArray('خوشحال')">
         </div>
         
         <div class="rectangle">
-            <img src="./assets/poker.png" alt="poker" (click)="updateInput('احساس خاصی ندارم')">
+            <img src="./assets/poker.png" alt="poker" (click)="updateInput('احساس خاصی ندارم')" (click)="addItemToSharedArray('بی حس')">
         </div>
         
         <div class="rectangle">
-            <img src="./assets/sad.png" alt="sad" (click)="updateInput('ناراحتم')">
+            <img src="./assets/sad.png" alt="sad" (click)="updateInput('ناراحتم')" (click)="addItemToSharedArray('ناراحت')">
         </div>
         </div>
         <input (keydown.enter)="goAdmin()" [(ngModel)]="inputText" type="text" placeholder="خلاصه احوالات..." style="margin-top: 40px;"/>
